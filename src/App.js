@@ -5,6 +5,7 @@ import hash from "./hash";
 import Player from "./Player";
 import logo from "./logo.svg";
 import "./App.css";
+import GridCalendar from "./GridCalendar"
 
 class App extends Component {
   constructor() {
@@ -43,8 +44,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+        <header className = "App-header">
+          {/* <img src={logo} className="App-logo" alt="logo" /> */}
+        <div>
           {!this.state.token && (
             <a
               className="btn btn--loginApp-link"
@@ -62,7 +64,11 @@ class App extends Component {
               progress_ms={this.progress_ms}
             />
           )}
-        </header>
+          </div>
+          <div className="Grid">
+            <GridCalendar />
+          </div>
+          </header>
       </div>
     );
   }
